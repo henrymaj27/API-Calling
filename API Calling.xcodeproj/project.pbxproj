@@ -13,6 +13,7 @@
 		E132624726B3A294006AA141 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E132624626B3A294006AA141 /* Preview Assets.xcassets */; };
 		E132625226B3A294006AA141 /* API_CallingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132625126B3A294006AA141 /* API_CallingTests.swift */; };
 		E132625D26B3A294006AA141 /* API_CallingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132625C26B3A294006AA141 /* API_CallingUITests.swift */; };
+		E132626C26B3A89B006AA141 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = E132626B26B3A89B006AA141 /* SwiftyJSON.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +46,7 @@
 		E132625826B3A294006AA141 /* API CallingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "API CallingUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E132625C26B3A294006AA141 /* API_CallingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API_CallingUITests.swift; sourceTree = "<group>"; };
 		E132625E26B3A294006AA141 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E132626B26B3A89B006AA141 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +99,7 @@
 			children = (
 				E132623F26B3A28F006AA141 /* API_CallingApp.swift */,
 				E132624126B3A28F006AA141 /* ContentView.swift */,
+				E132626B26B3A89B006AA141 /* SwiftyJSON.swift */,
 				E132624326B3A294006AA141 /* Assets.xcassets */,
 				E132624826B3A294006AA141 /* Info.plist */,
 				E132624526B3A294006AA141 /* Preview Content */,
@@ -259,6 +262,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E132626C26B3A89B006AA141 /* SwiftyJSON.swift in Sources */,
 				E132624226B3A28F006AA141 /* ContentView.swift in Sources */,
 				E132624026B3A28F006AA141 /* API_CallingApp.swift in Sources */,
 			);
