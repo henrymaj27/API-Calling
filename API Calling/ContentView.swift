@@ -26,34 +26,35 @@ struct ContentView: View {
                     }
                 )
             }
+            .navigationTitle("Top 10 BillBoard Songs")
         }
         .onAppear(perform: {
             getSongs()
         })
         .alert(isPresented: $showingAlert, content: {
-                        Alert(title: Text("Loading Error"),
-                              message: Text("There was a problem loading the data"),
-                              dismissButton: .default(Text("OK")))
-                })
+            Alert(title: Text("Loading Error"),
+                  message: Text("There was a problem loading the data"),
+                  dismissButton: .default(Text("OK")))
+        })
     }
     func getSongs() {
-        let apiKey = "?rapidapi-key=b617eab960msh0dfbbe9ea27b312p1268e7jsn3c209154ec9d"
-        let query = "https://billboard-api2.p.rapidapi.com/hot-100?date=2021-02-20&range=1-10\(apiKey)"
+        let apiKey = "b617eab960msh0dfbbe9ea27b312p1268e7jsn3c209154ec9d"
+        let query = "https://billboard-api2.p.rapidapi.com/hot-100?date=2021-07-31&range=1-10&rapidapi-key=\(apiKey)"
         if let url = URL(string: query) {
             if let data = try? Data(contentsOf: url) {
                 let json = try! JSON(data: data)
-                if json["success"] == true {
-                    let contents = json["body"].arrayValue
-                    for item in contents {
-                        let rank = item["rank"].stringValue
-                        let name = item["title"].stringValue
-                        let artist = item["artist"].stringValue
-                        let weeksOnChart = item["weeks on chart"].stringValue
+                let content = json["content"].dictionaryValue
+                for i in 1...10 {
+                    if let item = content[String(i)]?.dictionaryValue {
+                        let rank = item["rank"]!.stringValue
+                        let name = item["title"]!.stringValue
+                        let artist = item["artist"]!.stringValue
+                        let weeksOnChart = item["weeks on chart"]!.stringValue
                         let song = Song(rank: rank, name: name, artist: artist, weeksOnChart: weeksOnChart)
                         songs.append(song)
                     }
-                    return
                 }
+                return
             }
         }
         showingAlert = true
